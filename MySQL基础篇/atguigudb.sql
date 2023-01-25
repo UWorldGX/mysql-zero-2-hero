@@ -166,4 +166,63 @@ insert  into `locations`(`location_id`,`street_address`,`postal_code`,`city`,`st
 DROP TABLE IF EXISTS `order`;
 
 CREATE TABLE `order` (
-  `order_id` int(11) DEFAULT NULL);
+  `order_id` int(11) DEFAULT NULL,
+  `order_name` varchar(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `order` */
+
+insert  into `order`(`order_id`,`order_name`) values (1,'shkstart'),(2,'tomcat'),(3,'dubbo');
+
+/*Table structure for table `regions` */
+
+DROP TABLE IF EXISTS `regions`;
+
+CREATE TABLE `regions` (
+  `region_id` int(11) NOT NULL,
+  `region_name` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`region_id`),
+  UNIQUE KEY `reg_id_pk` (`region_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `regions` */
+
+insert  into `regions`(`region_id`,`region_name`) values (1,'Europe'),(2,'Americas'),(3,'Asia'),(4,'Middle East and Africa');
+
+/*Table structure for table `emp_details_view` */
+
+DROP TABLE IF EXISTS `emp_details_view`;
+
+/*!50001 DROP VIEW IF EXISTS `emp_details_view` */;
+/*!50001 DROP TABLE IF EXISTS `emp_details_view` */;
+
+/*!50001 CREATE TABLE  `emp_details_view`(
+ `employee_id` int(6) ,
+ `job_id` varchar(10) ,
+ `manager_id` int(6) ,
+ `department_id` int(4) ,
+ `location_id` int(4) ,
+ `country_id` char(2) ,
+ `first_name` varchar(20) ,
+ `last_name` varchar(25) ,
+ `salary` double(8,2) ,
+ `commission_pct` double(2,2) ,
+ `department_name` varchar(30) ,
+ `job_title` varchar(35) ,
+ `city` varchar(30) ,
+ `state_province` varchar(25) ,
+ `country_name` varchar(40) ,
+ `region_name` varchar(25) 
+)*/;
+
+/*View structure for view emp_details_view */
+
+/*!50001 DROP TABLE IF EXISTS `emp_details_view` */;
+/*!50001 DROP VIEW IF EXISTS `emp_details_view` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `emp_details_view` AS select `e`.`employee_id` AS `employee_id`,`e`.`job_id` AS `job_id`,`e`.`manager_id` AS `manager_id`,`e`.`department_id` AS `department_id`,`d`.`location_id` AS `location_id`,`l`.`country_id` AS `country_id`,`e`.`first_name` AS `first_name`,`e`.`last_name` AS `last_name`,`e`.`salary` AS `salary`,`e`.`commission_pct` AS `commission_pct`,`d`.`department_name` AS `department_name`,`j`.`job_title` AS `job_title`,`l`.`city` AS `city`,`l`.`state_province` AS `state_province`,`c`.`country_name` AS `country_name`,`r`.`region_name` AS `region_name` from (((((`employees` `e` join `departments` `d`) join `jobs` `j`) join `locations` `l`) join `countries` `c`) join `regions` `r`) where ((`e`.`department_id` = `d`.`department_id`) and (`d`.`location_id` = `l`.`location_id`) and (`l`.`country_id` = `c`.`country_id`) and (`c`.`region_id` = `r`.`region_id`) and (`j`.`job_id` = `e`.`job_id`)) */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
