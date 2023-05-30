@@ -1,0 +1,38 @@
+{
+    "Memos": [
+        {
+            "Traces": [],
+            "Date": "2023-05-16",
+            "Colors": [
+                {
+                    "R": 230,
+                    "G": 0,
+                    "B": 42,
+                    "A": 0,
+                    "IsKnownColor": false,
+                    "IsEmpty": false,
+                    "IsNamedColor": false,
+                    "IsSystemColor": false,
+                    "Name": "e6002a"
+                }
+            ]
+        },
+        {
+            "Traces": [],
+            "Date": "2023-05-16",
+            "Colors": [
+                {
+                    "R": 230,
+                    "G": 0,
+                    "B": 42,
+                    "A": 0,
+                    "IsKnownColor": false,
+                    "IsEmpty": false,
+                    "IsNamedColor": false,
+                    "IsSystemColor": false,
+                    "Name": "e6002a"
+                }
+            ]
+        }
+    ]
+}
