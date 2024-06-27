@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="资料">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/资料/课件.zip!/" />
+      <root url="jar://$PROJECT_DIR$/资料/代码 (1).zip!/" />
+      <root url="jar://$PROJECT_DIR$/资料/数据库文件.zip!/" />
+      <root url="jar://$PROJECT_DIR$/资料/笔记.zip!/" />
+      <root url="jar://$PROJECT_DIR$/资料/代码.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
